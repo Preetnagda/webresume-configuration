@@ -27,7 +27,7 @@ export class KeyService implements OnModuleInit{
   }
   
   async fetchPublicKey(): Promise<string> {
-    console.log("Call auth service for key");
+    console.info("Call auth service for key");
     const authServiceUrl = this.configSerivce.get<string>('AUTH_SERVICE_URL');
     const responseObersvable = this.httpService.get(authServiceUrl + '/keys');
     const {data} = await firstValueFrom(responseObersvable);
